@@ -1,0 +1,12 @@
+SELECT 
+    e.codigo AS codigo,   -- Código do estado da tabela estado
+    c.razaosocial,
+    t.numero AS telefone
+FROM 
+    clientes c
+JOIN 
+    estado e ON c.idestado = e.idestado
+JOIN 
+    telefone t ON c.idclientes = t.idcliente
+WHERE 
+    e.codigo = 'SP';
